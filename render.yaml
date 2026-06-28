@@ -1,0 +1,13 @@
+# Render Blueprint — tells Render this is a Node.js (Next.js) web service,
+# NOT Python. Deploy via Render: New → Blueprint → pick this repo/branch.
+services:
+  - type: web
+    name: consul-com
+    runtime: node
+    plan: free
+    branch: claude/neutral-consultation-platform-x8r05e
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20.18.1"
